@@ -1,10 +1,11 @@
-// map object
+
 const myMap = {
 	coordinates: [],
 	businesses: [],
 	map: {},
 	markers: {},
 
+   
 	buildMap() {
 		this.map = L.map('map', {
 		center: this.coordinates,
@@ -52,7 +53,7 @@ async function getFoursquare(business) {
 		method: 'GET',
 		headers: {
 		Accept: 'application/json',
-		Authorization: 'fsq3ATzZbmcGhdeFafr73wZcnJ+LlN6bK+4dh19a7ClS4u8='
+		Authorization: 'fsq315wfAqq281I+nWEL3EXmKzd9tE7ysyJluhicWNxiqno='
 		}
 	}
 	let limit = 5
@@ -79,6 +80,7 @@ function processBusinesses(data) {
 
 
 
+
 window.onload = async () => {
 	const coords = await getCoords()
 	myMap.coordinates = coords
@@ -93,3 +95,13 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	myMap.businesses = processBusinesses(data)
 	myMap.addMarkers()
 })
+
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'fsq315wfAqq281I+nWEL3EXmKzd9tE7ysyJluhicWNxiqno='
+    }
+  };
+  
+  
